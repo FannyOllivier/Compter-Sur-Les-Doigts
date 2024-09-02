@@ -107,8 +107,8 @@ class FingerCountingModule(Observable):
 
         while True:
             success, img = self.cap.read()
-            self.notify_observers(img)
             img = detector.findHands(img)
+            self.notify_observers(img)
             lmList = detector.findPosition(img,draw=False)
 
             current_time = time.time()
